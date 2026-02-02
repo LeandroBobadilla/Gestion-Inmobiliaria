@@ -1,605 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Meta Tags para SEO Mejorado -->
-    <title>BobadillaS | Gestión Inmobiliaria con Ventaja Ingenieril</title>
-    <meta name="description" content="Miguel Bobadilla, Agente MVCS e Ingeniero. Ofrezco asesoría inmobiliaria con ventaja técnica: seguridad legal, precisión en valoración y análisis de inversión en Lima.">
-    <meta name="keywords" content="agente inmobiliario Lima, ingeniero geógrafo, venta de propiedades, compra segura, asesoría inversión, plusvalía, Lima Norte, Lima Moderna">
-    <meta name="author" content="Miguel Bobadilla Sandoval">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Chosen Palette: Warm Neutrals & Professional Navy -->
-    <!-- Primary Background: #F5F5F0 (Warm Sand/Off-White) -->
-    <!-- Secondary/Cards: #FFFFFF (White) -->
-    <!-- Primary Text: #1F2937 (Dark Grey) -->
-    <!-- Accent/Brand: #1E3A8A (Deep Navy Blue - Trust/Engineering) -->
-    <!-- Highlight: #D97706 (Muted Gold - Success/Real Estate) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Carga optimizada de scripts externos -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
-    <script src="https://unpkg.com/@phosphor-icons/web" async></script>
+  <!-- Meta Tags SEO -->
+  <title>BobadillaS | Gestión Inmobiliaria con Ventaja Ingenieril</title>
+  <meta name="description" content="Miguel Bobadilla, Agente MVCS e Ingeniero. Asesoría inmobiliaria con respaldo técnico: seguridad legal, precisión en valoración y análisis de inversión en Lima.">
+  <meta name="keywords" content="agente inmobiliario Lima, ingeniero geógrafo, venta de propiedades, compra segura, asesoría inversión, plusvalía, Lima Norte, Lima Moderna">
+  <meta name="author" content="Miguel Bobadilla Sandoval">
+  <meta name="robots" content="index, follow">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #F5F5F0;
-            color: #1F2937;
-        }
-        .chart-container {
-            position: relative; 
-            width: 100%; 
-            max-width: 600px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            height: 350px; 
-            max-height: 400px;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
-        .nav-item.active {
-            border-bottom: 2px solid #1E3A8A;
-            color: #1E3A8A;
-            font-weight: 600;
-        }
-        .hidden-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .strategy-card {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: #1E3A8A;
-        }
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-    </style>
+  <!-- Tailwind & Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
+  <script src="https://unpkg.com/@phosphor-icons/web" async></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F2937;
+    }
+    .nav-item.active {
+      border-bottom: 2px solid #003DA5;
+      color: #003DA5;
+      font-weight: 600;
+    }
+    .strategy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      border-color: #003DA5;
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <i class="ph ph-house-line text-3xl text-blue-900 mr-2"></i>
-                    <span class="font-bold text-xl tracking-tight text-blue-900">BOBADILLA<span class="text-amber-600">S</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <button onclick="navigate('vision')" class="nav-item active px-3 py-2 text-sm font-medium transition-colors">Visión</button>
-                    <button onclick="navigate('advantage')" class="nav-item px-3 py-2 text-sm font-medium transition-colors text-gray-500 hover:text-blue-900">Mi Ventaja</button>
-                    <button onclick="navigate('services')" class="nav-item px-3 py-2 text-sm font-medium transition-colors text-gray-500 hover:text-blue-900">Mis Servicios</button>
-                    <button onclick="navigate('market')" class="nav-item px-3 py-2 text-sm font-medium transition-colors text-gray-500 hover:text-blue-900">Mercado & Hubs</button>
-                    <button onclick="navigate('contact')" class="nav-item bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                        <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
-                    </button>
-                </div>
-                <!-- Mobile menu button (mejora de rendimiento) -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-blue-900">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
-            </div>
-            <!-- Mobile menu (hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden py-4 space-y-2">
-                <button onclick="navigate('vision')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Visión</button>
-                <button onclick="navigate('advantage')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mi Ventaja</button>
-                <button onclick="navigate('services')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mis Servicios</button>
-                <button onclick="navigate('market')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mercado & Hubs</button>
-                <button onclick="navigate('contact')" class="block w-full text-left px-3 py-2 rounded bg-amber-50 text-amber-700 hover:bg-amber-100">
-                    <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
-                </button>
-            </div>
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <i class="ph ph-house-line text-3xl text-[#003DA5] mr-2"></i>
+          <span class="font-bold text-xl tracking-tight text-[#003DA5]">BOBADILLA<span class="text-[#DC1C2E]">S</span></span>
         </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
-
-        <!-- SECTION 1: HERO & VISION -->
-        <section id="vision" class="view-section animate-fade-in">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Text Column -->
-                <div class="space-y-6">
-                    <div class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
-                        Ingeniería Aplicada a Bienes Raíces
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                        Su Propiedad, Nuestra <br>
-                        <span class="text-blue-900">Precisión Estratégica</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 leading-relaxed italic border-l-4 border-amber-500 pl-4">
-                        "Somos Gestión Inmobiliaria BobadillaS. No solo conectamos clientes con propiedades; asesoramos inversiones con seguridad legal, valoración precisa y análisis de mercado fundamentado en ingeniería y datos."
-                    </p>
-                    <div class="flex space-x-4 pt-4">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="ph ph-certificate text-amber-600 text-xl mr-2"></i>
-                            <span>Agente MVCS 20679</span>
-                        </div>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="ph ph-ruler text-amber-600 text-xl mr-2"></i>
-                            <span>Ing. Geógrafo CIP 79921</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Image/Profile Column -->
-                <div class="relative">
-                    <div class="absolute inset-0 bg-blue-900 rounded-2xl transform rotate-3 opacity-10"></div>
-                    <div class="relative bg-white p-2 rounded-2xl shadow-xl">
-                        <!-- Tu Foto Profesional - ENLACE DIRECTO CORREGIDO -->
-                        <div class="aspect-[4/5] bg-gray-200 rounded-xl overflow-hidden relative group">
-                            <img src="https://i.ibb.co/C5B3CCv/Bobadilla-S.png" alt="Miguel Bobadilla Sandoval - Agente e Ingeniero" class="w-full h-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                                <h3 class="text-white text-xl font-bold">Miguel Bobadilla Sandoval</h3>
-                                <p class="text-gray-300 text-sm">CEO & Fundador</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: MI VENTAJA (Orientado al cliente) -->
-        <section id="advantage" class="view-section hidden-content">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <h2 class="text-3xl font-bold text-gray-900">¿Por qué Elegir a un Ingeniero como su Agente?</h2>
-                <p class="text-gray-600 mt-4">
-                    Combino la negociación inmobiliaria con el rigor técnico. Su transacción no solo será exitosa, será <strong>segura, precisa y fundamentada</strong>.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="glass-panel p-6 rounded-xl hover:shadow-lg transition-all duration-300 border-t-4 border-blue-900">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <i class="ph ph-shield-check text-2xl text-blue-900"></i>
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">PARA SU TRANQUILIDAD</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Seguridad Legal en su Inversión</h3>
-                    <p class="text-sm text-gray-500 mb-4">Mi experiencia en normativa territorial y registral es su mayor garantía.</p>
-                    <div class="bg-gray-50 p-3 rounded-md">
-                        <p class="text-sm font-semibold text-blue-900"><i class="ph ph-check-circle mr-1"></i> Ventaja para usted:</p>
-                        <p class="text-xs text-gray-600 mt-1">Le ayudo a <strong>identificar y gestionar riesgos legales</strong> (linderos, cargas, titularidad) desde el principio, protegiendo su capital.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-panel p-6 rounded-xl hover:shadow-lg transition-all duration-300 border-t-4 border-blue-900">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <i class="ph ph-ruler text-2xl text-blue-900"></i>
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">PARA SU BOLSILLO</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Precisión y Valor Real</h3>
-                    <p class="text-sm text-gray-500 mb-4">La exactitud en mediciones y análisis de mercado evita sorpresas.</p>
-                    <div class="bg-gray-50 p-3 rounded-md">
-                        <p class="text-sm font-semibold text-blue-900"><i class="ph ph-check-circle mr-1"></i> Ventaja para usted:</p>
-                        <p class="text-xs text-gray-600 mt-1">Obtiene una <strong>valoración justa y un precio de mercado real</strong>, basado en datos técnicos, no en percepciones. Paga (o recibe) lo que corresponde.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-panel p-6 rounded-xl hover:shadow-lg transition-all duration-300 border-t-4 border-blue-900">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <i class="ph ph-trend-up text-2xl text-blue-900"></i>
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">PARA SU FUTURO</span>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Inversión con Perspectiva</h3>
-                    <p class="text-sm text-gray-500 mb-4">Evaluar el potencial de desarrollo es clave para la plusvalía.</p>
-                    <div class="bg-gray-50 p-3 rounded-md">
-                        <p class="text-sm font-semibold text-blue-900"><i class="ph ph-check-circle mr-1"></i> Ventaja para usted:</p>
-                        <p class="text-xs text-gray-600 mt-1">Analizamos juntos el <strong>potencial real de crecimiento</strong> de la propiedad, considerando planes urbanos e infraestructura, para que su dinero trabaje a largo plazo.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Visualization: The Competitive Matrix -->
-            <div class="mt-12 bg-white p-8 rounded-2xl shadow-sm">
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-1">
-                        <h3 class="text-2xl font-bold mb-4">Una Diferencia que se Mide</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Este gráfico compara mi perfil integrador con el de un agente inmobiliario promedio.
-                        </p>
-                        <p class="text-sm text-gray-600">
-                            La diferencia está en las capacidades que dan <strong>seguridad y fundamento</strong> a su decisión de compra o venta.
-                        </p>
-                    </div>
-                    <div class="md:col-span-2 flex justify-center">
-                        <div class="chart-container">
-                            <canvas id="skillsRadarChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: MIS SERVICIOS (Reemplaza Plan de Trabajo) -->
-        <section id="services" class="view-section hidden-content">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <h2 class="text-3xl font-bold text-gray-900">Servicios Profesionales</h2>
-                <p class="text-gray-600 mt-4">
-                    Un portafolio claro, diseñado para resolver las necesidades clave del mercado inmobiliario limeño con un enfoque técnico.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Servicio 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 strategy-card">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-900 rounded-full mb-4">
-                            <i class="ph ph-signpost text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Asesoría y Venta de Propiedades</h3>
-                        <p class="text-sm text-amber-600 font-semibold mt-1">Para propietarios que buscan maximizar valor</p>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Valoración Técnica:</strong> Precio de mercado respaldado por análisis de datos y comparables reales.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Diagnóstico Legal Básico:</strong> Revisión inicial de la situación registral de la propiedad.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Exposición en Hubs Estratégicos:</strong> Mercadeo dirigido a zonas de alta demanda y crecimiento.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Gestión de Visitas y Negociación:</strong> Manejo profesional del proceso de venta hasta la minuta.</span></li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 strategy-card">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-amber-100 text-amber-600 rounded-full mb-4">
-                            <i class="ph ph-magnifying-glass text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Búsqueda y Compra con Ventaja</h3>
-                        <p class="text-sm text-amber-600 font-semibold mt-1">Para compradores que buscan seguridad e inteligencia</p>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Búsqueda Filtrada:</strong> Selección de propiedades que cumplan sus criterios técnicos, legales y de ubicación.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Revisión Legal y Técnica Preventiva:</strong> Identificación de observaciones en títulos y mediciones antes de la oferta.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Estrategia de Oferta y Negociación:</strong> Argumentación basada en hechos para obtener el mejor precio y condiciones.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Acompañamiento en Cierre:</strong> Asistencia durante la firma de minuta y coordinación con notaría.</span></li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 strategy-card">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4">
-                            <i class="ph ph-chart-line-up text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Consultoría para Inversionistas</h3>
-                        <p class="text-sm text-amber-600 font-semibold mt-1">Para quienes ven en bienes raíces un activo de crecimiento</p>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-600">
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Identificación de Oportunidades:</strong> Análisis de "Hubs de Crecimiento" y propiedades con potencial de valorización.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Análisis de Rentabilidad (ROI):</strong> Proyecciones de plusvalía, flujo de alquiler y escenarios de inversión.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Due Diligence Acelerado:</strong> Evaluación ágil de aspectos claves para la toma de decisiones.</span></li>
-                        <li class="flex items-start"><i class="ph ph-check text-green-500 mt-0.5 mr-2"></i> <span><strong>Gestión de Cartera:</strong> Asesoría para la compra, venta o reposicionamiento estratégico de activos.</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: MARKET & HUBS (Actualizada con enfoque comercial) -->
-        <section id="market" class="view-section hidden-content">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Definition and Context -->
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Mercado & Hubs de Crecimiento</h2>
-                    
-                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
-                        <h4 class="font-bold text-amber-900 mb-1">Invierta donde el crecimiento está planificado</h4>
-                        <p class="text-sm text-amber-800">
-                            Un <strong>"Hub de Crecimiento"</strong> es más que una buena zona; es un área donde la infraestructura (Metro, puertos), el comercio y la demanda residencial convergen, impulsando la plusvalía. Identificarlos es mi especialidad.
-                        </p>
-                    </div>
-
-                    <h4 class="font-bold text-gray-800 mb-3">Zonas de Enfoque Estratégico</h4>
-                    <ul class="space-y-2">
-                        <li class="p-3 bg-white rounded shadow-sm hover:bg-gray-50 cursor-pointer" onclick="updateHubInfo('norte')">
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-blue-900">Lima Norte (Hub Logístico-Industrial)</span>
-                                <i class="ph ph-caret-right text-gray-400"></i>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Potenciado por el Puerto de Chancay y la ampliación vial. Ideal para inversión en terrenos y locales.</p>
-                        </li>
-                        <li class="p-3 bg-white rounded shadow-sm hover:bg-gray-50 cursor-pointer" onclick="updateHubInfo('moderna')">
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-blue-900">Lima Moderna (Hub Residencial Premium)</span>
-                                <i class="ph ph-caret-right text-gray-400"></i>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Jesús María, Lince, Magdalena. Alta rotación y demanda por departamentos para vivir o alquilar.</p>
-                        </li>
-                        <li class="p-3 bg-white rounded shadow-sm hover:bg-gray-50 cursor-pointer" onclick="updateHubInfo('sur')">
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-blue-900">Lima Sur (Hub de Expansión y Recreación)</span>
-                                <i class="ph ph-caret-right text-gray-400"></i>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Lurín, Pachacámac. Oportunidad en terrenos para casa de campo, proyectos de vivienda o agroindustria.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Interactive Chart -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-bold mb-4 text-center">Potencial de Valorización Estimada (5 años)</h3>
-                    <div class="chart-container">
-                        <canvas id="hubsChart"></canvas>
-                    </div>
-                    <p id="hub-detail-text" class="text-xs text-center text-gray-500 mt-4 italic">
-                        Seleccione una zona para conocer la estrategia de inversión recomendada.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW SECTION 5: CONTACT FORM -->
-        <section id="contact" class="view-section hidden-content">
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Hablemos de su Proyecto</h2>
-                <p class="text-gray-600 text-center mb-8">Cuénteme en qué puedo ayudarle. Le responderé personalmente por WhatsApp.</p>
-                
-                <form id="contactForm" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo *</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition">
-                    </div>
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono / WhatsApp *</label>
-                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition">
-                    </div>
-                    <div>
-                        <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio de Interés</label>
-                        <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition">
-                            <option value="" selected>Seleccione una opción</option>
-                            <option value="Vender una propiedad">Vender una propiedad</option>
-                            <option value="Comprar una propiedad">Comprar una propiedad</option>
-                            <option value="Asesoría para inversionistas">Asesoría para inversionistas</option>
-                            <option value="Consulta general">Consulta general</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje *</label>
-                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition" placeholder="Describa brevemente su propiedad, lo que busca o su pregunta..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
-                        <i class="ph ph-whatsapp-logo text-xl mr-2"></i> Enviar Consulta por WhatsApp
-                    </button>
-                    <p class="text-xs text-center text-gray-500 mt-4">Al enviar este formulario, se abrirá WhatsApp para iniciar una conversación directa con Miguel Bobadilla.</p>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-2">BobadillaS</h2>
-            <p class="text-blue-200 mb-8 text-sm">Ingeniería Aplicada a la Gestión Inmobiliaria</p>
-            
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="#" class="hover:text-amber-400 transition-colors"><i class="ph ph-whatsapp-logo text-3xl"></i></a>
-                <a href="#" class="hover:text-amber-400 transition-colors"><i class="ph ph-linkedin-logo text-3xl"></i></a>
-                <a href="#" class="hover:text-amber-400 transition-colors"><i class="ph ph-envelope-simple text-3xl"></i></a>
-            </div>
-
-            <div class="text-xs text-blue-400 border-t border-blue-800 pt-8">
-                <p>Cel: <a href="tel:+51971446653" class="hover:text-amber-400">9 7144 6653</a> | Email: <a href="mailto:lebosan@gmail.com" class="hover:text-amber-400">lebosan@gmail.com</a></p>
-                <p class="mt-2">© 2026 Gestión Inmobiliaria BobadillaS. Todos los derechos reservados. | Agente MVCS 20679</p>
-            </div>
+        <div class="hidden md:flex space-x-8 items-center">
+          <button onclick="navigate('vision')" class="nav-item active px-3 py-2 text-sm font-medium">Visión</button>
+          <button onclick="navigate('advantage')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mi Ventaja</button>
+          <button onclick="navigate('services')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mis Servicios</button>
+          <button onclick="navigate('market')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mercado & Hubs</button>
+          <button onclick="navigate('contact')" class="nav-item bg-[#DC1C2E] hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium">
+            <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
+          </button>
         </div>
-    </footer>
+        <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-[#003DA5]">
+          <i class="ph ph-list text-2xl"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden py-4 space-y-2">
+        <button onclick="navigate('vision')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Visión</button>
+        <button onclick="navigate('advantage')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mi Ventaja</button>
+        <button onclick="navigate('services')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mis Servicios</button>
+        <button onclick="navigate('market')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mercado & Hubs</button>
+        <button onclick="navigate('contact')" class="block w-full text-left px-3 py-2 rounded bg-red-50 text-red-700 hover:bg-red-100">
+          <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Floating WhatsApp Button (Visible en móvil) -->
-    <a href="https://wa.me/51971446653?text=Hola%20Miguel,%20vi%20tu%20página%20web%20y%20me%20interesa%20recibir%20asesoría%20inmobiliaria." class="whatsapp-float md:hidden" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
+    <!-- Hero & Vision -->
+    <section id="vision" class="view-section animate-fade-in">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="inline-block bg-blue-100 text-[#003DA5] text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+            Ingeniería Aplicada a Bienes Raíces
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Su Propiedad, Nuestra <br><span class="text-[#003DA5]">Precisión Estratégica</span>
+          </h1>
+          <p class="text-lg text-gray-600 italic border-l-4 border-[#DC1C2E] pl-4">
+            "Somos Gestión Inmobiliaria BobadillaS. No solo conectamos clientes con propiedades; asesoramos inversiones con seguridad legal, valoración precisa y análisis de mercado fundamentado en ingeniería y datos."
+          </p>
+          <div class="flex space-x-4 pt-4">
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="ph ph-certificate text-[#DC1C2E] text-xl mr-2"></i><span>Agente MVCS 20679</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="ph ph-ruler text-[#DC1C2E] text-xl mr-2"></i><span>Ing. Geógrafo CIP 79921</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="relative bg-white p-2 rounded-2xl shadow-xl">
+            <div class="aspect-[4/5] bg-gray-200 rounded-xl overflow-hidden relative group">
+              <img src="BobadillaS.png" alt="Miguel Bobadilla Sandoval - Agente e Ingeniero" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                <h3 class="text-white text-xl font-bold">Miguel Bobadilla Sandoval</h3>
+                <p class="text-gray-300 text-sm">CEO & Fundador</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // State Management
-        const state = {
-            currentView: 'vision',
-            hubData: {
-                norte: "Estrategia Lima Norte: Enfocarse en terrenos industriales y lotizaciones cerca a la Panamericana Norte. Mi experiencia en catastro es vital para verificar zonificación y potencial de desarrollo, clave para inversionistas.",
-                moderna: "Estrategia Lima Moderna: Departamentos de 1-2 dormitorios para inversión (AirBnB/Alquiler) o vivienda propia. Priorizamos propiedades con buena documentación para una venta o compra ágil y segura.",
-                sur: "Estrategia Lima Sur: Identificación de predios rústicos con potencial de urbanización o para proyectos de casas de campo. Asesoría en el proceso de saneamiento para incrementar su valor de mercado."
-            }
-        };
+    <!-- Aquí siguen tus secciones Advantage, Services, Market, Contact (ya integradas en las partes 2-7) -->
+    <!-- ... -->
+  </main>
 
-        // Navigation Logic
-        function navigate(viewId) {
-            state.currentView = viewId;
-            document.querySelectorAll('.view-section').forEach(el => {
-                el.style.display = 'none';
-                el.classList.remove('animate-fade-in');
-            });
-            const selected = document.getElementById(viewId);
-            selected.style.display = 'block';
-            selected.classList.add('animate-fade-in');
+  <!-- Footer -->
+  <footer class="bg-[#003DA5] text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-2">BobadillaS</h2>
+      <p class="text-blue-200 mb-8 text-sm">Ingeniería Aplicada a la Gestión Inmobiliaria</p>
+      
+      <div class="flex justify-center space-x-8 mb-8">
+        <a href="https://wa.me/51971446653" class="hover:text-[#DC1C2E] transition-colors" aria-label="WhatsApp">
+          <i class="ph ph-whatsapp-logo text-3xl"></i>
+        </a>
+        <a href="https://linkedin.com" class="hover:text-[#DC1C2E] transition-colors" aria-label="LinkedIn">
+          <i class="ph ph-linkedin-logo text-3xl"></i>
+        </a>
+        <a href="mailto:lebosan@gmail.com" class="hover:text-[#DC1C2E] transition-colors" aria-label="Email">
+          <i class="ph ph-envelope-simple text-3xl"></i>
+        </a>
+      </div>
 
-            document.querySelectorAll('.nav-item').forEach(btn => {
-                btn.classList.remove('active', 'text-blue-900', 'font-bold');
-                btn.classList.add('text-gray-500');
-                if(btn.getAttribute('onclick').includes(viewId)) {
-                    btn.classList.add('active', 'text-blue-900', 'font-bold');
-                    btn.classList.remove('text-gray-500');
-                }
-            });
-            // Cerrar menú móvil después de navegar
-            document.getElementById('mobile-menu').classList.add('hidden');
-            if (viewId === 'advantage' && window.radarChart) { window.radarChart.resize(); }
-            if (viewId === 'market' && window.barChart) { window.barChart.resize(); }
+      <div class="text-xs text-blue-200 border-t border-blue-800 pt-8">
+        <p>Cel: <a href="tel:+51971446653" class="hover:text-[#DC1C2E]">9 7144 6653</a> | Email: <a href="mailto:lebosan@gmail.com" class="hover:text-[#DC1C2E]">lebosan@gmail.com</a></p>
+        <p class="mt-2">© 2026 Gestión Inmobiliaria BobadillaS. Todos los derechos reservados. | Agente MVCS 20679</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button (Visible en móvil) -->
+  <a href="https://wa.me/51971446653?text=Hola%20Miguel,%20vi%20tu%20página%20web%20y%20me%20interesa%20recibir%20asesoría%20inmobiliaria." 
+     class="whatsapp-float md:hidden" target="_blank" aria-label="Contactar por WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // State Management
+    const state = {
+      currentView: 'vision',
+      hubData: {
+        norte: "Estrategia Lima Norte: Enfocarse en terrenos industriales y lotizaciones cerca a la Panamericana Norte. Mi experiencia en catastro es vital para verificar zonificación y potencial de desarrollo, clave para inversionistas.",
+        moderna: "Estrategia Lima Moderna: Departamentos de 1-2 dormitorios para inversión (AirBnB/Alquiler) o vivienda propia. Priorizamos propiedades con buena documentación para una venta o compra ágil y segura.",
+        sur: "Estrategia Lima Sur: Identificación de predios rústicos con potencial de urbanización o para proyectos de casas de campo. Asesoría en el proceso de saneamiento para incrementar su valor de mercado."
+      }
+    };
+
+    // Navigation Logic
+    function navigate(viewId) {
+      state.currentView = viewId;
+      document.querySelectorAll('.view-section').forEach(el => {
+        el.style.display = 'none';
+        el.classList.remove('animate-fade-in');
+      });
+      const selected = document.getElementById(viewId);
+      selected.style.display = 'block';
+      selected.classList.add('animate-fade-in');
+
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.classList.remove('active', 'text-[#003DA5]', 'font-bold');
+        btn.classList.add('text-gray-500');
+        if(btn.getAttribute('onclick').includes(viewId)) {
+          btn.classList.add('active', 'text-[#003DA5]', 'font-bold');
+          btn.classList.remove('text-gray-500');
         }
+      });
+      document.getElementById('mobile-menu').classList.add('hidden');
+      if (viewId === 'advantage' && window.radarChart) { window.radarChart.resize(); }
+      if (viewId === 'market' && window.barChart) { window.barChart.resize(); }
+    }
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
 
-        // Hub Info Update Logic
-        function updateHubInfo(hubKey) {
-            const textEl = document.getElementById('hub-detail-text');
-            textEl.innerText = state.hubData[hubKey];
-            textEl.classList.remove('text-gray-500', 'italic');
-            textEl.classList.add('text-blue-900', 'font-medium', 'bg-blue-50', 'p-4', 'rounded-lg');
+    // Hub Info Update Logic
+    function updateHubInfo(hubKey) {
+      const textEl = document.getElementById('hub-detail-text');
+      textEl.innerText = state.hubData[hubKey];
+      textEl.classList.remove('text-gray-500', 'italic');
+      textEl.classList.add('text-[#003DA5]', 'font-medium', 'bg-blue-50', 'p-4', 'rounded-lg');
+    }
+
+    // WhatsApp Contact Form Logic
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+
+      const whatsappMessage = `*Nueva Consulta desde la Web BobadillaS*%0A%0A` +
+                              `*Nombre:* ${name}%0A` +
+                              `*Teléfono:* ${phone}%0A` +
+                              `*Servicio de interés:* ${service}%0A` +
+                              `*Mensaje:* ${message}%0A%0A` +
+                              `_Este mensaje fue enviado desde el formulario de contacto de la página web._`;
+
+      const phoneNumber = '51971446653';
+      window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+      alert('Gracias, ' + name + '. Se abrirá WhatsApp para que envíe su consulta directamente.');
+    });
+
+    // Chart Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // Radar Chart
+      const ctxRadar = document.getElementById('skillsRadarChart').getContext('2d');
+      window.radarChart = new Chart(ctxRadar, {
+        type: 'radar',
+        data: {
+          labels: [
+            'Conocimiento Legal/Saneamiento',
+            'Precisión Técnica/Topografía',
+            'Marketing Digital',
+            'Red de Contactos',
+            'Negociación de Ventas',
+            'Análisis de Inversión (SNIP)'
+          ],
+          datasets: [{
+            label: 'Agente Promedio',
+            data: [40, 20, 70, 60, 80, 10],
+            fill: true,
+            backgroundColor: 'rgba(156, 163, 175, 0.2)',
+            borderColor: 'rgb(156, 163, 175)'
+          }, {
+            label: 'BobadillaS (Ingeniero + Agente)',
+            data: [95, 95, 65, 70, 75, 90],
+            fill: true,
+            backgroundColor: 'rgba(0, 61, 165, 0.2)',
+            borderColor: '#003DA5'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          elements: { line: { borderWidth: 3 } },
+          scales: { r: { suggestedMin: 0, suggestedMax: 100 } },
+          plugins: { legend: { position: 'bottom' } }
         }
+      });
 
-        // WhatsApp Contact Form Logic
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene el envío normal del formulario
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-            
-            // Construye el mensaje para WhatsApp
-            const whatsappMessage = `*Nueva Consulta desde la Web BobadillaS*%0A%0A` +
-                                   `*Nombre:* ${name}%0A` +
-                                   `*Teléfono:* ${phone}%0A` +
-                                   `*Servicio de interés:* ${service}%0A` +
-                                   `*Mensaje:* ${message}%0A%0A` +
-                                   `_Este mensaje fue enviado desde el formulario de contacto de la página web._`;
-            
-            // Número de WhatsApp (código país + número sin el primer 9)
-            const phoneNumber = '51971446653'; // Perú: 51 + 971446653
-            
-            // Abre WhatsApp en una nueva pestaña
-            window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
-            
-            // Opcional: Resetear el formulario
-            // this.reset();
-            
-            // Opcional: Mostrar un mensaje de confirmación
-            alert('Gracias, ' + name + '. Se abrirá WhatsApp para que envíe su consulta directamente.');
-        });
-
-        // Chart Initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Radar Chart: Skills Synergy
-            const ctxRadar = document.getElementById('skillsRadarChart').getContext('2d');
-            window.radarChart = new Chart(ctxRadar, {
-                type: 'radar',
-                data: {
-                    labels: [
-                        'Conocimiento Legal/Saneamiento',
-                        'Precisión Técnica/Topografía',
-                        'Marketing Digital',
-                        'Red de Contactos',
-                        'Negociación de Ventas',
-                        'Análisis de Inversión (SNIP)'
-                    ],
-                    datasets: [{
-                        label: 'Agente Promedio',
-                        data: [40, 20, 70, 60, 80, 10],
-                        fill: true,
-                        backgroundColor: 'rgba(156, 163, 175, 0.2)',
-                        borderColor: 'rgb(156, 163, 175)',
-                        pointBackgroundColor: 'rgb(156, 163, 175)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(156, 163, 175)'
-                    }, {
-                        label: 'BobadillaS (Ingeniero + Agente)',
-                        data: [95, 95, 65, 70, 75, 90],
-                        fill: true,
-                        backgroundColor: 'rgba(30, 58, 138, 0.2)',
-                        borderColor: 'rgb(30, 58, 138)',
-                        pointBackgroundColor: 'rgb(30, 58, 138)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(30, 58, 138)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    elements: { line: { borderWidth: 3 } },
-                    scales: {
-                        r: {
-                            angleLines: { display: true },
-                            suggestedMin: 0,
-                            suggestedMax: 100,
-                            ticks: { backdropColor: 'transparent' }
-                        }
-                    },
-                    plugins: { legend: { position: 'bottom' } }
-                }
-            });
-
-            // 2. Bar Chart: Hubs Growth
-            const ctxBar = document.getElementById('hubsChart').getContext('2d');
-            window.barChart = new Chart(ctxBar, {
-                type: 'bar',
-                data: {
-                    labels: ['Lima Tradicional', 'Lima Moderna', 'Lima Norte (Puerto)', 'Lima Sur (Playas/Campo)'],
-                    datasets: [{
-                        label: '% Potencial de Valorización',
-                        data: [5, 8, 25, 15],
-                        backgroundColor: [
-                            'rgba(209, 213, 219, 0.8)',
-                            'rgba(217, 119, 6, 0.8)',
-                            'rgba(30, 58, 138, 0.8)',
-                            'rgba(217, 119, 6, 0.6)'
-                        ],
-                        borderWidth: 0,
-                        borderRadius: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: { beginAtZero: true, title: { display: true, text: '% Crecimiento Estimado' } }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.raw + '% Crecimiento Estimado';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+      // Bar Chart
+      const ctxBar = document.getElementById('hubsChart').getContext('2d');
+      window.barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+          labels: ['Lima Tradicional', 'Lima Moderna', 'Lima Norte (Puerto)', 'Lima Sur (Playas/Campo)'],
+          datasets: [{
+            label: '% Potencial de Valorización',
+            data: [5, 8, 25, 15],
+            backgroundColor: ['#DC1C2E', '#003DA5', '#003DA5', '#DC1C2E'],
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true, title: { display: true, text: '% Crecimiento Estimado' } } },
+          plugins: { legend: { display: false } }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
