@@ -64,38 +64,40 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-  <!-- Navigation -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <i class="ph ph-house-line text-3xl text-[#003DA5] mr-2"></i>
-          <span class="font-bold text-xl tracking-tight text-[#003DA5]">BOBADILLA<span class="text-[#DC1C2E]">S</span></span>
-        </div>
-        <div class="hidden md:flex space-x-8 items-center">
-          <button onclick="navigate('vision')" class="nav-item active px-3 py-2 text-sm font-medium">Visión</button>
-          <button onclick="navigate('advantage')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mi Ventaja</button>
-          <button onclick="navigate('services')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mis Servicios</button>
-          <button onclick="navigate('market')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mercado & Hubs</button>
-          <button onclick="navigate('contact')" class="nav-item bg-[#DC1C2E] hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium">
-            <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
-          </button>
-        </div>
-        <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-[#003DA5]">
-          <i class="ph ph-list text-2xl"></i>
-        </button>
+ <!-- Navigation -->
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <i class="ph ph-house-line text-3xl text-[#003DA5] mr-2"></i>
+        <span class="font-bold text-xl tracking-tight text-[#003DA5]">BOBADILLA<span class="text-[#DC1C2E]">S</span></span>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden py-4 space-y-2">
-        <button onclick="navigate('vision')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Visión</button>
-        <button onclick="navigate('advantage')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mi Ventaja</button>
-        <button onclick="navigate('services')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mis Servicios</button>
-        <button onclick="navigate('market')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mercado & Hubs</button>
-        <button onclick="navigate('contact')" class="block w-full text-left px-3 py-2 rounded bg-red-50 text-red-700 hover:bg-red-100">
+      <div class="hidden md:flex space-x-8 items-center">
+        <button onclick="navigate('vision')" class="nav-item active px-3 py-2 text-sm font-medium">Visión</button>
+        <button onclick="navigate('advantage')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mi Ventaja</button>
+        <button onclick="navigate('services')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mis Servicios</button>
+        <button onclick="navigate('market')" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Mercado & Hubs</button>
+        <a href="blog.html" class="nav-item px-3 py-2 text-sm font-medium text-gray-500 hover:text-[#003DA5]">Blog</a>
+        <button onclick="navigate('contact')" class="nav-item bg-[#DC1C2E] hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium">
           <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
         </button>
       </div>
+      <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-[#003DA5]">
+        <i class="ph ph-list text-2xl"></i>
+      </button>
     </div>
-  </nav>
+    <div id="mobile-menu" class="hidden md:hidden py-4 space-y-2">
+      <button onclick="navigate('vision')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Visión</button>
+      <button onclick="navigate('advantage')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mi Ventaja</button>
+      <button onclick="navigate('services')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mis Servicios</button>
+      <button onclick="navigate('market')" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Mercado & Hubs</button>
+      <a href="blog.html" class="block w-full text-left px-3 py-2 rounded hover:bg-blue-50">Blog</a>
+      <button onclick="navigate('contact')" class="block w-full text-left px-3 py-2 rounded bg-red-50 text-red-700 hover:bg-red-100">
+        <i class="ph ph-whatsapp-logo mr-1"></i> Contactar
+      </button>
+    </div>
+  </div>
+</nav>
 
   <!-- Main Content -->
   <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
@@ -666,10 +668,16 @@
     <i class="ph ph-whatsapp-logo"></i>
   </a>
 
-  <!-- Scripts -->
+    <!-- Scripts -->
   <script>
     // Navegación entre secciones
     function navigate(viewId) {
+      // Si se hace clic en Blog, redirigir a blog.html
+      if (viewId === 'blog') {
+        window.location.href = 'blog.html';
+        return;
+      }
+      
       document.querySelectorAll('.view-section').forEach(el => {
         el.classList.remove('active');
       });
@@ -680,7 +688,8 @@
       document.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.remove('active', 'text-[#003DA5]', 'font-bold');
         btn.classList.add('text-gray-500');
-        if (btn.getAttribute('onclick').includes(viewId)) {
+        // VERIFICACIÓN MODIFICADA: Añade check para btn.getAttribute('onclick')
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(viewId)) {
           btn.classList.add('active', 'text-[#003DA5]', 'font-bold');
           btn.classList.remove('text-gray-500');
         }
@@ -796,6 +805,4 @@
     });
   </script>
 </body>
-
 </html>
-
