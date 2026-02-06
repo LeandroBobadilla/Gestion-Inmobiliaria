@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | BobadillaS - Insights Inmobiliarios</title>
+  <meta name="description" content="Artículos especializados sobre inversión inmobiliaria, análisis de mercado, plusvalía y estrategias en Lima Moderna. Ingeniería aplicada a bienes raíces." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #003DA5 0%, #0056D6 100%);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .article-content img {
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  
+  <!-- Header del Blog (similar al principal) -->
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <i class="ph ph-house-line text-2xl mr-2"></i>
+          <span class="font-bold text-lg">BOBADILLA<span class="text-[#DC1C2E]">S</span> BLOG</span>
+        </a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-gray-300">Inicio</a>
+          <a href="#categorias" class="hover:text-gray-300">Categorías</a>
+          <a href="#destacados" class="hover:text-gray-300">Destacados</a>
+          <a href="index.html#contact" class="bg-[#DC1C2E] hover:bg-red-700 px-4 py-2 rounded-lg">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero del Blog -->
+  <section class="gradient-bg text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Insights Inmobiliarios con Enfoque Ingenieril</h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+        Análisis técnico, estrategias de inversión y tendencias del mercado inmobiliario limeño desde la perspectiva de un ingeniero
+      </p>
+      <div class="inline-flex items-center bg-white text-gray-800 px-4 py-2 rounded-full">
+        <i class="ph ph-ruler text-[#DC1C2E] mr-2"></i>
+        <span>Precisión técnica + Experiencia inmobiliaria</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Principal -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="grid lg:grid-cols-3 gap-8">
+      
+      <!-- Artículos Principales -->
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Artículos Recientes</h2>
+        
+        <!-- Artículo 1 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 card-hover">
+          <div class="md:flex">
+            <div class="md:w-2/5">
+              <img src="assets/images/blog/plusvalia-distritos.jpg" alt="Análisis de plusvalía por distritos" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-3/5 p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-blue-100 text-[#003DA5] text-xs font-semibold px-3 py-1 rounded-full">ANÁLISIS DE MERCADO</span>
+                <span class="text-gray-500 text-sm ml-4"><i class="ph ph-calendar mr-1"></i> Marzo 2024</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                <a href="blog/post-1.html" class="hover:text-[#003DA5] transition-colors">
+                  Proyección de Plusvalía 2024-2026: ¿Dónde invertir en Lima Moderna?
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Análisis técnico de las tendencias de crecimiento por distrito. Miraflores vs Barranco vs Surco: 
+                ¿Dónde está el verdadero potencial de inversión? Datos respaldados por metodología ingenieril.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="blog/post-1.html" class="text-[#003DA5] font-semibold hover:underline flex items-center">
+                  Leer artículo completo <i class="ph ph-arrow-right ml-2"></i>
+                </a>
+                <span class="text-gray-500 text-sm">12 min lectura</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 card-hover">
+          <div class="md:flex">
+            <div class="md:w-2/5">
+              <img src="assets/images/blog/analisis-tecnico.jpg" alt="Análisis técnico de propiedades" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-3/5 p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-red-100 text-[#DC1C2E] text-xs font-semibold px-3 py-1 rounded-full">INGENIERÍA APLICADA</span>
+                <span class="text-gray-500 text-sm ml-4"><i class="ph ph-calendar mr-1"></i> Febrero 2024</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                <a href="blog/post-2.html" class="hover:text-[#003DA5] transition-colors">
+                  La Importancia del Análisis Técnico en la Valoración de Propiedades
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Como ingeniero geógrafo, explico cómo la medición precisa, análisis estructural y evaluación de 
+                potencial constructivo pueden hacer la diferencia entre una buena y una excelente inversión.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="blog/post-2.html" class="text-[#003DA5] font-semibold hover:underline flex items-center">
+                  Leer artículo completo <i class="ph ph-arrow-right ml-2"></i>
+                </a>
+                <span class="text-gray-500 text-sm">15 min lectura</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo 3 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 card-hover">
+          <div class="md:flex">
+            <div class="md:w-2/5">
+              <img src="assets/images/blog/remax-ventajas.jpg" alt="Ventajas RE/MAX Conecta" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-3/5 p-6">
+              <div class="flex items-center mb-4">
+                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">RED GLOBAL</span>
+                <span class="text-gray-500 text-sm ml-4"><i class="ph ph-calendar mr-1"></i> Enero 2024</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                <a href="blog/post-3.html" class="hover:text-[#003DA5] transition-colors">
+                  Ventajas de Trabajar con un Afiliado RE/MAX Conecta: Más Allá del Agente Individual
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                ¿Por qué elegir un profesional afiliado a RE/MAX? Análisis de las ventajas competitivas: 
+                acceso a red global, tecnología especializada, respaldo institucional y recursos compartidos.
+              </p>
+              <div class="flex items-center justify-between">
+                <a href="blog/post-3.html" class="text-[#003DA5] font-semibold hover:underline flex items-center">
+                  Leer artículo completo <i class="ph ph-arrow-right ml-2"></i>
+                </a>
+                <span class="text-gray-500 text-sm">10 min lectura</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1">
+        <!-- Categorías -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8" id="categorias">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Categorías</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="flex justify-between items-center p-3 rounded-lg hover:bg-blue-50">
+                <span class="font-medium">Análisis de Mercado</span>
+                <span class="bg-blue-100 text-[#003DA5] text-xs px-2 py-1 rounded-full">8</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex justify-between items-center p-3 rounded-lg hover:bg-red-50">
+                <span class="font-medium">Ingeniería Aplicada</span>
+                <span class="bg-red-100 text-[#DC1C2E] text-xs px-2 py-1 rounded-full">6</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex justify-between items-center p-3 rounded-lg hover:bg-green-50">
+                <span class="font-medium">Estrategias de Inversión</span>
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex justify-between items-center p-3 rounded-lg hover:bg-purple-50">
+                <span class="font-medium">RE/MAX & Networking</span>
+                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">4</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex justify-between items-center p-3 rounded-lg hover:bg-yellow-50">
+                <span class="font-medium">Guías Prácticas</span>
+                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">7</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Artículos Destacados -->
+        <div class="bg-white rounded-2xl shadow-lg p-6" id="destacados">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Destacados</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/images/blog/destacado-1.jpg" alt="Financiamiento" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-sm mb-1">
+                  <a href="#" class="hover:text-[#003DA5]">Guía Completa de Financiamiento 2024</a>
+                </h4>
+                <p class="text-xs text-gray-500">Bancos, tasas y requisitos actualizados</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/images/blog/destacado-2.jpg" alt="Airbnb" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-sm mb-1">
+                  <a href="#" class="hover:text-[#003DA5]">Rentabilidad Airbnb en Barranco</a>
+                </h4>
+                <p class="text-xs text-gray-500">Análisis de retorno de inversión</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/images/blog/destacado-3.jpg" alt="Legal" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-sm mb-1">
+                  <a href="#" class="hover:text-[#003DA5]">Checklist Legal para Compradores</a>
+                </h4>
+                <p class="text-xs text-gray-500">Documentos imprescindibles</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="bg-gradient-to-r from-[#003DA5] to-[#0056D6] text-white rounded-2xl shadow-lg p-6 mt-8">
+          <h3 class="text-xl font-bold mb-3">Newsletter Exclusivo</h3>
+          <p class="text-blue-100 text-sm mb-4">Recibe análisis de mercado, oportunidades y estrategias directamente en tu correo.</p>
+          <form class="space-y-3">
+            <input type="email" placeholder="Tu correo electrónico" class="w-full px-4 py-3 rounded-lg text-gray-900">
+            <button type="submit" class="w-full bg-[#DC1C2E] hover:bg-red-700 text-white font-semibold py-3 rounded-lg">
+              Suscribirme
+            </button>
+          </form>
+          <p class="text-xs text-blue-200 mt-3">Sin spam. Puedes darte de baja cuando quieras.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">BobadillaS Blog</h3>
+          <p class="text-gray-400 text-sm">Ingeniería aplicada a insights inmobiliarios. Análisis técnico, estrategias y tendencias del mercado limeño.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="#categorias" class="hover:text-white">Categorías</a></li>
+            <li><a href="#destacados" class="hover:text-white">Artículos Destacados</a></li>
+            <li><a href="index.html#contact" class="hover:text-white">Contacto Profesional</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Servicios</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="index.html#services" class="hover:text-white">Asesoría de Inversión</a></li>
+            <li><a href="index.html#services" class="hover:text-white">Venta con Estrategia</a></li>
+            <li><a href="index.html#services" class="hover:text-white">Compra Segura</a></li>
+            <li><a href="index.html#advantage" class="hover:text-white">Análisis Técnico</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contacto</h4>
+          <div class="space-y-3 text-gray-400">
+            <div class="flex items-center">
+              <i class="ph ph-whatsapp-logo text-[#25d366] mr-2"></i>
+              <a href="https://wa.me/51971446653" class="hover:text-white">+51 971 446 653</a>
+            </div>
+            <div class="flex items-center">
+              <i class="ph ph-envelope-simple text-red-400 mr-2"></i>
+              <a href="mailto:lebosan@gmail.com" class="hover:text-white">lebosan@gmail.com</a>
+            </div>
+          </div>
+          <div class="flex space-x-4 mt-6">
+            <a href="https://wa.me/51971446653" class="text-gray-400 hover:text-white"><i class="ph ph-whatsapp-logo text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="ph ph-linkedin-logo text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="ph ph-instagram-logo text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>© 2024 Blog BobadillaS. Todos los derechos reservados. | Afiliado RE/MAX Conecta</p>
+        <p class="mt-2">Este blog no constituye asesoría financiera. Consulta con un profesional para decisiones de inversión.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
